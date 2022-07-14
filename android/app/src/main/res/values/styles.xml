@@ -1,0 +1,151 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources
+    xmlns:tools="http://schemas.android.com/tools"
+    xmlns:android="http://schemas.android.com/apk/res/android">
+    <!-- Theme applied to the Android Window while the process is starting when the OS's Dark Mode setting is off -->
+    <style name="LaunchTheme" parent="@android:style/Theme.Light.NoTitleBar">
+        <!-- Show a splash screen on the activity. Automatically removed when
+             the Flutter engine draws its first frame -->
+        <item name="android:windowBackground">@drawable/launch_background</item>
+    </style>
+    <!-- Theme applied to the Android Window as soon as the process has started.
+         This theme determines the color of the Android Window while your
+         Flutter UI initializes, as well as behind your Flutter UI while its
+         running.
+
+         This Theme is only used starting with V2 of Flutter's Android embedding. -->
+    <style name="NormalTheme" parent="@android:style/Theme.Light.NoTitleBar">
+        <item name="android:windowBackground">?android:colorBackground</item>
+    </style>
+
+    <!--   ////////////////////////////////////////////////////////////////////////////////   -->
+    <style name="AnimationStyleForChangeWindowOption">
+        <item name="android:windowEnterAnimation">@anim/for_change_window_setting</item>
+        <item name="android:windowExitAnimation">@anim/fade_out</item>
+        <item name="android:windowShowAnimation">@anim/for_change_window_setting</item>
+        <item name="android:windowHideAnimation">@anim/fade_out</item>
+
+        <item name="android:inAnimation">@anim/for_change_window_setting</item>
+        <item name="android:outAnimation">@anim/for_change_window_setting</item>
+
+        <item name="android:activityOpenEnterAnimation">@anim/for_change_window_setting</item>
+        <item name="android:activityOpenExitAnimation">@anim/for_change_window_setting</item>
+        <item name="android:activityCloseEnterAnimation">@anim/for_change_window_setting</item>
+        <item name="android:activityCloseExitAnimation">@anim/fade_out</item>
+
+        <item name="android:taskOpenEnterAnimation">@anim/for_change_window_setting</item>
+        <item name="android:taskOpenExitAnimation">@anim/for_change_window_setting</item>
+        <item name="android:taskCloseEnterAnimation">@anim/for_change_window_setting</item>
+        <item name="android:taskCloseExitAnimation">@anim/for_change_window_setting</item>
+        <item name="android:taskToFrontEnterAnimation">@anim/for_change_window_setting</item>
+        <item name="android:taskToFrontExitAnimation">@anim/for_change_window_setting</item>
+        <item name="android:taskToBackEnterAnimation">@anim/for_change_window_setting</item>
+        <item name="android:taskToBackExitAnimation">@anim/for_change_window_setting</item>
+
+        <item name="android:wallpaperOpenEnterAnimation">@anim/for_change_window_setting</item>
+        <item name="android:wallpaperOpenExitAnimation">@anim/for_change_window_setting</item>
+        <item name="android:wallpaperCloseEnterAnimation">@anim/for_change_window_setting</item>
+        <item name="android:wallpaperCloseExitAnimation">@anim/for_change_window_setting</item>
+        <item name="android:wallpaperIntraOpenEnterAnimation">@anim/for_change_window_setting</item>
+        <item name="android:wallpaperIntraOpenExitAnimation">@anim/for_change_window_setting</item>
+        <item name="android:wallpaperIntraCloseEnterAnimation">@anim/for_change_window_setting</item>
+        <item name="android:wallpaperIntraCloseExitAnimation">@anim/for_change_window_setting</item>
+
+        <item name="android:imeExtractEnterAnimation">@anim/for_change_window_setting</item>
+        <item name="android:imeExtractExitAnimation">@anim/for_change_window_setting</item>
+    </style>
+
+
+    <style name="AppTextAppearanceTheme" parent="@android:style/TextAppearance">
+        <item name="android:textColor">#FFF</item>
+        <item name="android:textColorPrimary">#FFF</item>
+        <item name="android:textColorSecondary">#FFF</item>
+    </style>
+
+    <style name="ActionBarTheme" parent="@android:style/Widget.ActionBar">
+        <item name="android:titleTextStyle">@style/AppTextAppearanceTheme</item>
+        <item name="android:textColorPrimary">#FFF</item>
+        <item name="android:textColor">#FFF</item>
+        <item name="android:actionMenuTextColor">#FFF</item>
+        <item name="android:background">@android:color/transparent</item>
+    </style>
+
+    <style name="ThemeCommonForAll" parent="@android:style/Theme.Light">
+
+        <item name="android:windowIsTranslucent">false</item>
+        <item name="android:windowDisablePreview">false</item>
+        <item name="android:colorBackgroundCacheHint">@null</item> -->
+        <item name="android:backgroundDimEnabled">false</item>
+        <item name="android:windowBackground">#FF00FF00</item> <!-- for transparent splash change this -->
+        <item name="android:colorBackground">#00FFFFFF</item>
+
+        <item name="android:windowDrawsSystemBarBackgrounds" tools:targetApi="lollipop">true</item>
+        <item name="android:statusBarColor" tools:targetApi="lollipop">#00FFFFFF</item>
+        <item name="android:navigationBarColor" tools:targetApi="lollipop">#00FFFFFF</item>
+        <item name="android:windowTranslucentStatus" tools:targetApi="kitkat">false</item>
+        <item name="android:windowTranslucentNavigation" tools:targetApi="kitkat">false</item>
+
+        <!-- (fitsSystemWindows & windowTranslucentStatus) to true if need draw statusBar over activity same Lenz system
+        up line == window.setFlags(WindowManager.LayoutParams.FLAG_LAYOUT_NO_LIMITS, WindowManager.LayoutParams.FLAG_LAYOUT_NO_LIMITS)
+        or == window.setFlags(WindowManager.LayoutParams.FLAG_LAYOUT_NO_LIMITS, WindowManager.LayoutParams.FLAG_LAYOUT_IN_SCREEN) -->
+        <item name="android:fitsSystemWindows">false</item>
+        <item name="android:windowFullscreen">false</item>
+
+        <item name="android:windowActionBarOverlay" tools:targetApi="honeycomb">false</item>
+        <item name="android:windowContentOverlay">@null</item>
+        <item name="android:windowAnimationStyle">@style/AnimationStyleDefault</item>
+
+        <item name="android:textAppearance">@style/AppTextAppearanceTheme</item>
+        <item name="android:titleTextStyle">@style/AppTextAppearanceTheme</item>
+        <item name="android:subtitleTextStyle">@style/AppTextAppearanceTheme</item>
+        <item name="android:titleTextAppearance" tools:targetApi="lollipop">@style/AppTextAppearanceTheme</item>
+        <item name="android:actionBarTheme" tools:targetApi="lollipop">@style/ActionBarTheme</item>
+        <item name="android:actionBarStyle" tools:targetApi="lollipop">@style/ActionBarTheme</item>
+    </style>
+
+    <style name="ThemeCommonForAll.NoActionBar">
+        <item name="android:windowActionBar" tools:targetApi="honeycomb">false</item>
+        <item name="android:windowNoTitle">true</item>
+    </style>
+
+    <style name="ThemeForBlankActivity" parent="ThemeCommonForAll.NoActionBar">
+        <item name="android:windowIsTranslucent">true</item>
+        <item name="android:windowDisablePreview">true</item>
+        <item name="android:windowBackground">#00FFFFFF</item>
+        <item name="android:windowTranslucentStatus" tools:targetApi="kitkat">true</item>
+        <item name="android:windowTranslucentNavigation" tools:targetApi="kitkat">true</item>
+        <item name="android:windowContentOverlay">@null</item>
+        <item name="android:windowIsFloating">false</item>
+        <item name="android:backgroundDimEnabled">false</item>
+        <item name="android:windowAnimationStyle">@android:style/Animation.Translucent</item>
+    </style>
+
+    <style name="AnimationStyleDefault" parent="android:style/Animation.Activity">
+        <item name="android:windowEnterAnimation">@null</item>
+        <item name="android:windowExitAnimation">@null</item>
+
+        <item name="android:activityOpenEnterAnimation">@anim/activity_slide_from_right</item><!-- this is over all -->
+        <item name="android:activityOpenExitAnimation">@anim/activity_slide_to_left</item>
+        <item name="android:activityCloseEnterAnimation">@anim/activity_slide_from_right</item>
+        <item name="android:activityCloseExitAnimation">@anim/activity_slide_to_left</item>
+
+        <item name="android:taskOpenEnterAnimation">@null</item>
+        <item name="android:taskOpenExitAnimation">@null</item>
+        <item name="android:taskToFrontEnterAnimation">@null</item>
+        <item name="android:taskToBackExitAnimation">@null</item>
+        <item name="android:wallpaperOpenEnterAnimation">@null</item>
+        <item name="android:wallpaperCloseExitAnimation">@null</item>
+        <item name="android:wallpaperIntraOpenEnterAnimation">@null</item>
+        <item name="android:wallpaperIntraCloseExitAnimation">@null</item>
+
+        <item name="android:launchTaskBehindTargetAnimation" tools:targetApi="lollipop">@null</item>
+        <item name="android:launchTaskBehindSourceAnimation" tools:targetApi="lollipop">@null</item>
+        <item name="android:fragmentOpenEnterAnimation" tools:targetApi="honeycomb">@null</item>
+        <item name="android:fragmentOpenExitAnimation" tools:targetApi="honeycomb">@null</item>
+        <item name="android:fragmentCloseEnterAnimation" tools:targetApi="honeycomb">@null</item>
+        <item name="android:fragmentCloseExitAnimation" tools:targetApi="honeycomb">@null</item>
+        <item name="android:fragmentFadeEnterAnimation" tools:targetApi="honeycomb">@null</item>
+        <item name="android:fragmentFadeExitAnimation" tools:targetApi="honeycomb">@null</item>
+    </style>
+
+</resources>

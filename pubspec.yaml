@@ -1,0 +1,172 @@
+# Flutter: 3.0.0     old: 2.8.0
+# Dart: 2.17.1       old: 2.15.0
+# Java: 17
+
+name: brandfit_manager
+description: Fitness
+homepage: https://iris.ir
+
+publish_to: 'none'
+
+version: 2.0.0
+
+environment:
+  sdk: ">=2.17.1"
+  flutter: ">=3.0.0"                                  # null Safety
+
+dependencies:
+  flutter:
+    sdk: flutter
+
+  #flutter_rename_app: ^1.0.0
+  import_sorter: ^4.6.0
+  flutter_launcher_icons: ^0.9.3
+
+  flutter_localizations:
+    sdk: flutter
+
+  cupertino_icons: ^1.0.5
+  device_info_plus: ^4.0.0
+  platform_device_id: ^1.0.1
+  workmanager: ^0.5.0                  # no Web
+  filesize: ^2.0.1
+  permission_handler: ^10.0.0
+  animate_do: ^2.1.0
+  simple_animations: ^4.2.0
+  lottie: ^1.3.0
+  another_flushbar: ^1.10.29           # (Toast & snack)
+  pin_code_fields: 7.4.0
+  simple_timer: ^2.0.0
+  image_picker: ^0.8.5+3              # +camera
+  file_picker: ^4.6.1
+  just_audio: ^0.9.27
+  chewie: ^1.3.4
+  image_editor: ^1.0.2                # No Web    crop, rotate [native]
+  scrollable_positioned_list: ^0.3.2
+  carousel_slider: ^4.1.1
+  pull_to_refresh: 2.0.0
+  loadany: ^1.0.0
+  awesome_notifications: ^0.6.21
+  http: ^0.13.4
+  dio: ^4.0.6
+  convex_bottom_bar: 3.0.0            # Edited W, https://pub.dev/packages/convex_bottom_bar
+  fl_chart: ^0.55.0
+  toggle_switch: ^2.0.1
+  numberpicker: ^2.1.1
+  auto_size_text_pk: ^3.0.0
+  sizer: ^2.0.15
+  flutter_parsed_text: ^2.2.1
+  simple_html_css: ^4.0.0
+  badges: ^2.0.3
+  time_ago_provider: ^4.1.2
+  pattern_lock: ^2.0.0
+  percent_indicator: ^4.2.2
+  photo_view: ^0.14.0                 # image view gallery
+  flutter_chat_bubble: ^2.0.0
+  emoji_picker_flutter: ^1.3.0
+  open_file: ^3.2.1
+  flutter_audio_recorder2: ^0.0.2     # No Web
+  expandable: ^5.0.1
+  material_floating_search_bar: ^0.3.7
+  flutter_quill: ^5.0.4
+  flutter_treeview: ^1.0.7+1
+
+  iris_tools:
+    git: https://github.com/ali-1989/IrisTools.git
+  iris_db:
+    git: https://github.com/ali-1989/IrisDB.git
+  iris_download_manager:
+    git: https://github.com/ali-1989/IrisDownloadManager.git
+  getsocket:
+    git: https://github.com/ali-1989/GetSocket.git
+  blur_preview:
+    path: ../#FlutterPackages/blurPreview
+  iris_pic_editor:
+    path: ../#FlutterPackages/IrisPicEditor
+  iris_sound_player:
+    path: ../#FlutterPackages/IrisSoundPlayer
+  flutter_chat_bar:
+    path: ../#FlutterPackages/FlutterChatBar
+
+
+dependency_overrides:
+  device_info_plus: ^4.0.0
+
+
+dev_dependencies:
+  flutter_test:
+    sdk: flutter
+  flutter_lints: ^2.0.0
+
+flutter:
+  uses-material-design: true
+
+  # Image.asset('assets/images/food6.jpg')
+  assets:
+    - assets/images/
+    - assets/locales/
+    - assets/audio/
+    - assets/raw/
+
+
+  #style: italic  weight: 700
+  fonts:
+    - family: Atlanta
+      fonts:
+        - asset: assets/fonts/atlanta.ttf
+    - family: SimpleLife # sub
+      fonts:
+        - asset: assets/fonts/simpleLife-sub.ttf
+    - family: OpenSans
+      fonts:
+        - asset: assets/fonts/OpenSans.ttf
+    - family: Diplomat # sub
+      fonts:
+        - asset: assets/fonts/diplomat-sub.ttf
+    - family: Estedad
+      fonts:
+        - asset: assets/fonts/estedad.ttf
+    - family: Nazanin # base-sub
+      fonts:
+        - asset: assets/fonts/nazanin-base-sub.ttf
+    - family: Sans # sub
+      fonts:
+        - asset: assets/fonts/sans-sub.ttf
+    - family: Sahel # base-sub
+      fonts:
+        - asset: assets/fonts/Sahel-base-sub.ttf
+    - family: SahelBold
+      fonts:
+        - asset: assets/fonts/sahel-Black.ttf
+
+
+
+flutter_icons:
+  image_path: "dep/app_icon.jpg"
+  android: true
+  ios: true
+  remove_alpha_ios: true
+
+
+import_sorter:
+  emojis: false
+  comments: false
+
+
+## flutter pub run import_sorter:main
+## flutter pub run flutter_launcher_icons:main
+## flutter pub run flutter_rename_app_plus
+# import '[^pd/]
+
+#  flutter_rename_app_plus: ^1.1.0:
+#    application_name: ARE
+#    dart_package_name: are
+#    application_id: ir.iris.are
+#    bundle_id: ir.iris.are
+#    android_package_name: ir.iris.are
+
+
+# caret sign:
+# ^0.1.2 is the same as '>=0.1.2 <0.2.0'
+# ^1.2.3 would be the same as '>=1.2.3 <2.0.0'
+# if not use caret sign , force download/use that version.

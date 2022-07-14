@@ -1,0 +1,122 @@
+===========================================================================================
+* for [pull/Loading, Sliver, FilterRequest, findLastCaseTs]:
+- AdvertisingScreenCtr
+- FoodMaterialListScreenCtr
+===========================================================================================
+* for [imageCache]:
+- AdvertisingScreenCtr
+===========================================================================================
+* for [loadMore]:
+- TrainerManagementScreenCtr
+===========================================================================================
+* for open sheet menu [camera/gallery]
+
+- BioScreen()
+=======================================================================================
+* overlay and dialog with close button in bottom:
+
+final content = Align(
+    child: SizedBox(
+      width: 260,
+      child: Card(
+        child: Column(
+          mainAxisSize: MainAxisSize.min,
+          children: [
+            Padding(
+              padding: const EdgeInsets.symmetric(horizontal: 40, vertical: 25.0),
+              child: Column(
+                mainAxisSize: MainAxisSize.min,
+                children: [
+                  FlipInX(
+                    child: SizedBox(
+                      width: double.infinity,
+                      child: ElevatedButton(
+                          onPressed: (){
+                            OverlayDialog().hide(context);
+                            controller.gotoChartPage(controller.pupilModel);
+                            //controller.getUserStatus(controller.model.userId);
+                          },
+                          child: Text('${tInMap('pupilPage', 'pupilStatus')}'),
+                      ),
+                    ),
+                  ),
+
+                  SizedBox(height: 15,),
+                  FlipInX(
+                    child: SizedBox(
+                      width: double.infinity,
+                      child: ElevatedButton(
+                        onPressed: (){
+
+                        },
+                        child: Text('${tInMap('pupilPage', 'pupilProgram')}'),
+                      ),
+                    ),
+                  ),
+
+                  SizedBox(height: 15,),
+                  FlipInX(
+                    child: SizedBox(
+                      width: double.infinity,
+                      child: ElevatedButton(
+                        onPressed: (){
+
+                        },
+                        child: Text('${tInMap('pupilPage', 'executionProcess')}'),
+                      ),
+                    ),
+                  )
+                ],
+              ),
+            ),
+
+            SizedBox(height: 20,),
+            Padding(
+              padding: const EdgeInsets.fromLTRB(10, 0, 0, 10),
+              child: Align(
+                alignment: Alignment.bottomLeft,
+                child: Material(
+                  color: AppThemes.currentTheme.primaryColor,
+                  shape: CircleBorder(),
+                  child: IconButton(
+                      onPressed: (){
+                        OverlayDialog().hide(context);
+                      },
+                      padding: EdgeInsets.all(4),
+                      splashRadius: 1,
+                      constraints: BoxConstraints.tightFor(),
+                      iconSize: 25,
+                      icon: Icon(IconList.close, color: Colors.white,)
+                  ),
+                ),
+              ),
+            ),
+          ],
+        ),
+      ),
+    ),
+ );
+
+final view = OverlayScreenView(content: content);
+
+OverlayDialog().show(context, view, canBack: true);
+========================================================================================
+notFound:
+
+Widget noStudents(){
+    return Padding(
+      padding: EdgeInsets.symmetric(horizontal: 40, vertical: 0),
+      child: Column(
+        crossAxisAlignment: CrossAxisAlignment.center,
+        mainAxisAlignment: MainAxisAlignment.center,
+        children: [
+          PreWidgets.notFound(),
+          SizedBox(height: 40,),
+          Text('${tInMap('pupilPage', 'youHaveNoStudents')}').subAlpha(),
+        ],
+      ),
+    );
+  }
+========================================================================================
+final sheet = SheetCenter.generateCloseSheet(context, v, 'EditUser', backColor: Colors.white);
+SheetCenter.showModalSheet(context, (_)=> sheet, routeName: 'EditUser');
